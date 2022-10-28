@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Budget } from './components/Budget';
+import { Remaining } from './components/Remaing';
+import { TotalExpense } from './components/TotalExpense';
+import AddExpense from './components/AddExpense';
+import { AppProvider } from './Context/AppContext';
+import ExpenseList from './components/ExpenseList';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+    <AppProvider>
+      <div className="App">
+      <div className='container'>
+        <div className='top'>
+        <h1 id="heading">Expense Tracker</h1>
+        <div className='display'>
+          <div className='budget'> <Budget/></div>
+          <div className='Remaining'> <Remaining/></div>
+          <div className='Totalexpense'><TotalExpense/></div>
+        </div>
+        
+         
+          
+          
+
+
+        
+        
+        </div>
+        <div className='bottom'>
+          <div className='Addexpense'> <AddExpense/></div>
+          <div className='expense'><ExpenseList/>
+          </div>
+       
+        
+        </div>
+      </div>
+    </div> 
+
+    </AppProvider>
+    
   );
 }
 
